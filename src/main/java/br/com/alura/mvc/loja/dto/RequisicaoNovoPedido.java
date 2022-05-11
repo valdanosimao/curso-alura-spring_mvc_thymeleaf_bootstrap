@@ -1,12 +1,21 @@
 package br.com.alura.mvc.loja.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.alura.mvc.loja.model.Pedido;
 
 public class RequisicaoNovoPedido {
 	
+	@NotBlank //não pode ser nulo nem vazio
 	private String nomeProduto;
+	
+	@NotBlank
 	private String urlProduto;
+	
+	@NotBlank
 	private String urlImagem;
+	
+	@NotBlank
 	private String descricao;
 	
 	public String getNomeProduto() {
