@@ -31,12 +31,12 @@ public class PedidoController {
 	public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult result) {
 		if(result.hasErrors()) {
 			return "/formulario";
-		} else {
+		} 
 			Pedido pedido = requisicao.toPedido();
 			pedidoRepository.save(pedido);
 			
-			return "/formulario";
-		}
+			return "redirect:/home";
+		
 		
 	}
 
