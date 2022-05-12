@@ -36,12 +36,12 @@
 			<h1 class="display-4">Meus Pedidos</h1>
 		</div>
 
-		<nav
-			class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+		<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 			<div class="navbar-nav">
-				<a class="nav-link active" herf="">Todos</a> <a class="nav-link"
-					herf="">Aguardando</a> <a class="nav-link" herf="">Aprovado</a> <a
-					class="nav-link" herf="">Entregue</a>
+				<a th:Classappend="${status} == null ? 'active'" class="nav-link" herf="/home">Todos</a>
+			    <a th:Classappend="${status} == 'aguardando' ? 'active'" class="nav-item nav-link" herf="/home/aguardando">Aguardando</a> 
+				<a th:Classappend="${status} == 'aprovado' ? 'active'" class="nav-link" herf="/home/aprovado">Aprovado</a> 
+				<a th:Classappend="${status} == 'entregue' ? 'active'" class="nav-link" herf="/home/entregue">Entregue</a>
 			</div>
 			<a href="pedido/formulario"><button class="btn btn-secondary">Novo</button></a>
 		</nav>
